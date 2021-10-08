@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Administrator &nbsp;|&nbsp; Aplikasi SIRUS</title>
+
+  <!-- CSS's Files -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../dataTables/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/admin.css">
+
+  <!-- Font's Files -->
+  <link href="../fonts/exo_2.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../fonts/font-awesome.min.css">
+
+  <!-- Favicon's File -->
+  <link rel="shortcut icon" type="image/x-icon" href="../images/doctor.png">
+
+</head>
+<body>
+  <nav class="navbar navbar-admin navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span></button>
+          <a class="navbar-brand" href="#"><span>APLIKASI</span> SIRUS</a>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <div class="profile-sidebar">
+    	<div class="profile-userpic">
+				<img src="../images/doctor.png" class="img-responsive" alt="">
+		</div>
+		<div class="profile-usertitle">
+        	<div class="profile-usertitle-name">Username</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="divider"></div>
+    <ul class="nav menu-sidebar">
+      <li class="active">
+        <a href="#"><em class="fa fa-dashboard">&nbsp;</em> Beranda</a>
+      </li>
+      <li>
+        <a href="#"><em class="fa fa-stethoscope">&nbsp;</em> Gejala</a>
+      </li>
+      <li>
+        <a href="#"><em class="fa fa-medkit">&nbsp;</em> Penyakit</a>
+      </li>
+      <li>
+        <a href="#"><em class="fa fa-files-o">&nbsp;</em> Basis Kasus</a>
+      </li>
+      <li>
+        <a href="?page=laporan"><em class="fa fa-folder-open-o">&nbsp;</em> Hasil Konsultasi</a>
+      </li>
+      <div class="clear"></div>
+    </ul>
+    <ul class="nav menu-sidebar">
+    	<li>
+    		<a href="#"><em class="fa fa-power-off">&nbsp;</em> 
+    		Keluar</a>
+    	</li>
+    </ul>
+  </div> <!-- .menu sidebar -->
+
+  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main-page">
+  		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a>Beranda
+				</li>
+			</ol>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="page-header">Beranda</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+				<div class="panel panel-widget">
+					<div class="row no-padding">
+						<em class="fa fa-stethoscope icon"></em>
+						<div class="large">120</div>
+						<div>Jumlah Gejala</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+				<div class="panel panel-widget">
+					<div class="row">
+						<em class="fa fa-medkit icon"></em>
+						<div class="large">120</div>
+						<div>Jumlah Penyakit</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+				<div class="panel panel-widget">
+					<div class="row">
+						<em class="fa fa-files-o icon"></em>
+						<div class="large">10</div>
+						<div>Jumlah Basis Kasus</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
+				<div class="panel panel-widget">
+					<div class="row">
+						<em class="fa fa-folder-open-o icon"></em>
+						<div class="large">200</div>
+						<div>Jumlah Diagnosa Hari Ini</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped" id="datatables">
+              <thead>
+                <tr>
+                  <th width="10%">No.</th>
+                  <th>Nama Pasien</th>
+                  <th>Gejala</th>
+                  <th>Hasil Diagnosa</th>
+                  <th>Presentase Kebenaran</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="center"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>			
+		
+  </div>
+
+  <!-- JQuery's Files -->
+  <script src="../jquery/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../dataTables/datatables.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready( function () {
+      $('#datatables').DataTable({
+        "language":{
+            "url" : "../dataTables/Indonesian.json",
+            "sEmptyTable" : "Tidads"
+        }
+      });
+    } );
+  </script>
+</body>
+</html>

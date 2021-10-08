@@ -1,0 +1,247 @@
+
+/*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+HH				Global
+HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+body{
+	font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    position: relative;
+}
+.top{
+    display: none;
+    background: rgb(81, 255, 182);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 22px;
+    position: fixed;
+    bottom: 45px;
+    right: 35px;
+}
+.show-top{
+    display: block;
+    z-index: 99;
+    transition: 2s;
+}
+.top:hover{
+    background: rgb(87, 160, 255);
+}
+h1{
+	font-weight: 100;
+	font-size: 40px;
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 10px;
+}
+ h2{
+	font-weight: 100;
+	font-size: 40px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+p{
+	font-size: 16px;
+}
+
+input.form-control {
+  border: 1px solid #ddd;
+  box-shadow: none;
+  height: 46px; 
+}
+
+/* Header */
+.header{
+	height: 100vh;
+	background: #1b5773;
+    padding: 45px 0px;
+}
+#logo {
+    width: 150px;
+	color: white;
+	display: inline-block;
+	padding: 0px;
+    float: left;
+}
+a#logo:hover{
+	text-decoration: none;
+}
+.strong{
+	font-weight: 400;
+}
+.header img{
+	width: 75%;
+}
+.top-bar{
+    width: 100%;
+}
+.fixed {
+    position: fixed;
+    background: rgb(87, 160, 255);
+    top: 0;
+    z-index: 99;
+    transition: 1s;
+}
+.fixed #logo{
+    font-size: 60px;
+}
+.starting img{
+	margin-top: 45px;
+    margin-left: 75px;
+}
+.banner-text{
+    margin-top: 100px;
+}
+.starting p{
+	padding: 20px 0px;
+	color: #fff;
+	line-height: 30px;
+}
+.btn.btn-konsultasi {
+    padding: 10px;
+    background: white;
+    border-radius: 50px;
+    width: 180px;
+    text-align: left;
+    color: #333333;
+    border: 1px solid white;
+    margin-right: 10px;
+}
+.btn.btn-konsultasi:hover{
+    color: #fff;
+    background-color: transparent;
+}
+
+.btn.btn-konsultasi i {
+    width: 20px;
+    font-size: 36px;
+    margin-left: 10px;
+    margin-right: 25px;
+}
+
+.btn.btn-konsultasi strong {
+    font-weight: 800;
+}
+
+/* Navbar */
+.navbar-konsul {
+  background: #17475e;
+  height: 70px; 
+}
+
+/* Konsultasi */
+section#konsultasi {
+    background: #f1f4f7;
+}
+
+hr {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-style: inset;;
+    border-width: 1px;
+    border-color: black;
+}
+
+/* Hasil Konsultasi */
+.btn.btn-konsul {
+    padding: 5px;
+    background: white;
+    border-radius: 50px;
+    width: 115px;
+    text-align: right;
+    color: #333333;
+    border: 1px solid black;
+}
+.btn.btn-konsul:hover{
+    color: white;
+    background-color: black;
+}
+
+.btn.btn-konsul i {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn.btn-konsul strong {
+    font-weight: 800;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.btn.btn-home {
+    padding: 5px;
+    background: white;
+    border-radius: 50px;
+    width: 100px;
+    text-align: left;
+    color: #333333;
+    border: 1px solid black;
+}
+.btn.btn-home:hover{
+    color: white;
+    background-color: black;
+}
+
+.btn.btn-home i {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn.btn-home strong {
+    font-weight: 800;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Media */
+@media (max-width: 992px){
+    .header{
+        height: 100%;
+    }
+    .header img{
+        display: none;
+    }
+    .img-hover{
+        left: 0;
+        right: 0;
+    }
+}
+@media (max-width: 0px){
+    h2{
+        font-size: 35px;
+    }
+    .header{
+        text-align: center;
+        padding: 10px 0px;
+    }
+    .banner-text {
+        margin-top: 50px;
+    }
+    .btn.btn-konsultasi{
+        margin-right: 5px;
+        width: 133px;
+        margin-bottom: 30px;
+    }
+    .btn.btn-konsultasi i {
+        font-size: 36px;
+        margin-right: 16px;
+        margin-left: 0px;
+    }
+    #logo{
+        font-size: 56px;
+        text-align: left;
+    }
+    .btn-konsultasi{
+        margin: 5px 0px;
+    }
+}

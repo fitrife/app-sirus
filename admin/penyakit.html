@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Administrator &nbsp;|&nbsp; Aplikasi SIRUS</title>
+
+  <!-- CSS's Files -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../dataTables/datatables.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/admin.css">
+
+  <!-- Font's Files -->
+  <link href="../fonts/exo_2.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../fonts/font-awesome.min.css">
+
+  <!-- Favicon's File -->
+  <link rel="shortcut icon" type="image/x-icon" href="../images/doctor.png">
+
+</head>
+<body>
+  <nav class="navbar navbar-admin navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span></button>
+          <a class="navbar-brand" href="#"><span>APLIKASI</span> SIRUS</a>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <div class="profile-sidebar">
+      <div class="profile-userpic">
+        <img src="../images/doctor.png" class="img-responsive" alt="">
+    </div>
+    <div class="profile-usertitle">
+          <div class="profile-usertitle-name">Username</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="divider"></div>
+    <ul class="nav menu-sidebar">
+      <li>
+        <a href="#"><em class="fa fa-dashboard">&nbsp;</em> Beranda</a>
+      </li>
+      <li>
+        <a href="#"><em class="fa fa-stethoscope">&nbsp;</em> Gejala</a>
+      </li>
+      <li class="active">
+        <a href="#"><em class="fa fa-medkit">&nbsp;</em> Penyakit</a>
+      </li>
+      <li>
+        <a href="?page=laporan"><em class="fa fa-folder-open-o">&nbsp;</em> Hasil Konsultasi</a>
+      </li>
+      <div class="clear"></div>
+    </ul>
+    <ul class="nav menu-sidebar">
+      <li>
+        <a href="#"><em class="fa fa-power-off">&nbsp;</em> 
+        Keluar</a>
+      </li>
+    </ul>
+  </div> <!-- .menu sidebar -->
+
+  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main-page">
+    <div class="row">
+      <ol class="breadcrumb">
+        <li><a href="#">
+          <em class="fa fa-home"></em>
+        </a></li>
+        <li class="active"><a href="#">
+          <em class="fa fa-medkit"></em>
+        </a>Penyakit</li>
+      </ol>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="page-header">Penyakit</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped" id="datatables">
+              <thead>
+                <tr>
+                  <th width="10%">Kode</th>
+                  <th>Nama Penyakit</th>
+                  <th>Informasi Penyakit</th>
+                  <th>Penanganan Dini</th>
+                  <th width="20%">Opsi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="center"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td align="center">
+                    <a href="#" id="edit_penyakit" data-toggle="modal" data-target="#edit">
+                      <button class="btn btn-info btn-xs">
+                        <i class="fa fa-edit"></i> Edit
+                      </button>
+                    </a>
+                    <a href="#" id="hapus_penyakit" onclick="return confirm('Apakah Anda yakin akan menghapus data ini?')">
+                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus</button>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a type="button" id="tambah_yuk" onkeydown="tambahFunction(event)" class="btn btn-success" data-toggle="modal" data-target="#tambah" style="margin-bottom: 5px"><i class="fa fa-plus"></i> Tambah Data</a>
+          </div>
+
+          <div id="tambah" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><em class="fa fa-times"></em></button>
+                  <h4>Tambah Data Penyakit</h4>
+                </div>
+                <form action="" method="post">
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label class="control-label" for="kode_penyakit">Kode</label>
+                      <input type="text" name="kode_penyakit" class="form-control" id="kode_penyakit" required="">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="nama_penyakit">Nama Penyakit</label>
+                      <input type="text" name="nama_penyakit" class="form-control" id="nama_penyakit" required="">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="info_penyakit">Informasi Penyakit</label>
+                      <input type="text" name="info_penyakit" class="form-control" id="info_penyakit" required="">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="penanganan">Penanganan Dini</label>
+                      <input type="text" name="penanganan" class="form-control" id="penanganan" required="">
+                    </div>
+                    <div>
+                      <button type="reset" class="btn btn-danger">Reset</button>
+                      <input type="submit" name="tambah" class="btn btn-success" value="Simpan">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div id="edit" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><em class="fa fa-times"></em></button>
+                  <h4>Edit Data Penyakit</h4>
+                </div>
+                <form action="" method="post">
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label class="control-label" for="kode_penyakit">Kode</label>
+                      <input type="text" name="kode_penyakit" class="form-control" id="kode_penyakit" required="">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="nama_penyakit">Nama Penyakit</label>
+                      <input type="text" name="nama_penyakit" class="form-control" id="nama_penyakit" required="">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="info_penyakit">Informasi Penyakit</label>
+                      <input type="text" name="info_penyakit" class="form-control" id="info_penyakit" required="">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="penanganan">Penanganan Dini</label>
+                      <input type="text" name="penanganan" class="form-control" id="penanganan" required="">
+                    </div>
+                    <div>
+                      <button type="reset" class="btn btn-danger">Reset</button>
+                      <input type="submit" name="edit" class="btn btn-success" value="Simpan">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JQuery's Files -->
+  <script src="../jquery/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../dataTables/datatables.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready( function () {
+      $('#datatables').DataTable({
+        "language":{
+            "url" : "../dataTables/Indonesian.json",
+            "sEmptyTable" : "Tidads"
+        }
+      });
+    } );
+  </script>
+  <script src="../jquery/jquery.hotkeys/jquery.hotkeys.js"></script>
+  <script type="text/javascript">
+    function tambahFunction(event) {
+      var x = event.which || event.keyCode;
+      if (x == 27) {
+        document.getElementById("tambah_yuk").click();
+      }
+    }
+  </script>
+  
+</body>
+</html>

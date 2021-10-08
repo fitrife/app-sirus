@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Aplikasi SIRUS</title>
+
+    <!-- CSS's Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="dataTables/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/user.css"
+
+    <!-- Font's Files -->
+    <link rel="stylesheet" type="text/css" href="vendor/fontawesome-free/css/all.min.css" />
+
+    <!-- Favicon's File -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/doctor.png" />
+  </head>
+  <body>
+    <nav class="navbar navbar-konsul navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href=""><img src="images/app-sirus.png" id="logo" /></a>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+
+    <section id="konsultasi" class="wrapper">
+      <h2 class="page-header" style="padding-top: 50px; color: black; text-align: center">Hasil Konsultasi</h2>
+      <div class="container">
+        <div id="form-header" class="mainbox col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <div class="panel-title" style="padding-left: 20px ;">Berikut Hasil Konsultasi Anda</div>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="control-label col-md-4">Nama</label>
+                <div class="controls col-md-8">
+                  <p>Nama Pasien</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-4">Jenis Kelamin</label>
+                <div class="controls col-md-8">
+                  <p>Jenis Kelamin</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-4">Tgl.Lahir</label>
+                <div class="controls col-md-8">
+                  <p>Tgl Lahir</p>
+                </div>
+              </div>
+              <br />
+              <hr />
+              <div class="form-group">
+                <label class="control-label col-md-2 col-md-offset-1">Hasil Diagnosa</label>
+                <div class="controls col-md-6 col-md-offset-1">
+                  <p>Nama Penyakit</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-2 col-md-offset-1">Informasi</label>
+                <div class="controls col-md-6 col-md-offset-1">
+                  <p>Informasi Penyakit</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-2 col-md-offset-1">Penanganan Dini</label>
+                <div class="controls col-md-6 col-md-offset-1">
+                  <p>Solusi</p>
+                </div>
+              </div>
+              <br />
+              <div class="form-group">
+                <div class="controls col-md-6 col-xs-6" style="text-align: left">
+                  <a href="diagnosa.html" class="btn btn-konsul">
+                    <i class="fa fa-notes-medical pull-left"></i>
+                    <strong>KONSULTASI</strong>
+                  </a>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="controls col-md-6 col-xs-6" style="text-align: right">
+                  <a href="home.html" class="btn btn-home">
+                    <i class="fa fa-home pull-right"></i>
+                    <strong>BERANDA</strong>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Konsultasi -->
+
+    <!-- JavaScript-->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="dataTables/datatables.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".datatables").DataTable({
+          language: {
+            url: "dataTables/Indonesian.json",
+            sEmptyTable: "Tidads",
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
